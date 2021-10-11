@@ -31,6 +31,13 @@
     <br><br>
     <h3 id="grades_output"></h3>
 
+    <br><br><br>
+    <h1>Jacket Checker</h1>
+    <h3>should I carry jacket today</h3>
+    <label for="currentTemperature">Current Temperature</label>
+    <input type="number" name="currentTemperature" id="currentTemperature">
+    <button>check Jacket status</button>
+
     <script>
         const rate = 170;
         function pkrToUsd(pkr) {
@@ -60,8 +67,8 @@
 
         function calculateGrades() {
             const marks = Number(document.getElementById("marks").value);
-            if (marks === 0) {
-                document.getElementById("grades_output").innerText = "Percentage can not be zero";
+            if (marks <= 0) {
+                document.getElementById("grades_output").innerText = "Percentage can not be zero or a negative number";
             }
             else if ((marks > 80) || (marks === 80)) {
                 document.getElementById("grades_output")
