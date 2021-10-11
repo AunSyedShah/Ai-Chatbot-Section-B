@@ -98,8 +98,11 @@
             else if(temperature < 25){
                 document.getElementById("jacketOutput").innerText = "carry jacket";
             }
-            else if(temperature >= 25){
+            else if(temperature >= 25 && temperature <= 40){
                 document.getElementById("jacketOutput").innerText = "don't carry jacket";
+            }
+            else{
+                document.getElementById("jacketOutput").innerText = `Don't you think, You went beyond the limits, ${temperature} C is quite high.`;
             }
         }
     </script>
