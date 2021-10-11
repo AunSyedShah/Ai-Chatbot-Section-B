@@ -36,7 +36,9 @@
     <h3>should I carry jacket today</h3>
     <label for="currentTemperature">Current Temperature</label>
     <input type="number" name="currentTemperature" id="currentTemperature">
-    <button>check Jacket status</button>
+    <button onclick="checkJacketStatus()">check Jacket status</button>
+    <br><br>
+    <h3 id="jacketOutput"></h3>
 
     <script>
         const rate = 170;
@@ -82,6 +84,22 @@
             } else if (marks < 60) {
                 document.getElementById("grades_output")
                     .innerText = "Fail";
+            }
+        }
+
+        function checkJacketStatus() {
+            const temperature = document.getElementById("currentTemperature").value;
+            if(temperature <= 0){
+                document.getElementById("jacketOutput").innerText = "Don't go out!";
+            }
+            else if(temperature < 15){
+                document.getElementById("jacketOutput").innerText = "carry coat";
+            }
+            else if(temperature < 25){
+                document.getElementById("jacketOutput").innerText = "carry jacket";
+            }
+            else if(temperature >= 25){
+                document.getElementById("jacketOutput").innerText = "don't carry jacket";
             }
         }
     </script>
